@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.sdkimplementation;
+package com.example.sdkimplementation
 
 import android.annotation.SuppressLint
 import android.app.sdksandbox.SandboxedSdk
@@ -23,19 +23,20 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 
-/*
+/**
  * This class works as an entry point for the sandbox to interact with the SDK.
- *
- * This class should be populated inside the AndroidManifest file.
  */
 @SuppressLint("NewApi")
 class SdkProviderImpl : SandboxedSdkProvider() {
 
     @SuppressLint("Override")
     override fun onLoadSdk(params: Bundle): SandboxedSdk {
+        // Returns a SandboxedSdk, passed back to the client.
+        // The IBinder used to create the SandboxedSdk object is used by the app to call into the SDK.
         return SandboxedSdk(SdkApi(context!!))
     }
 
+    /* Creates and sets up the view for your ad */
     @SuppressLint("Override")
     override fun getView(windowContext: Context, bundle: Bundle, width: Int, height: Int): View {
         val webView = WebView(windowContext)

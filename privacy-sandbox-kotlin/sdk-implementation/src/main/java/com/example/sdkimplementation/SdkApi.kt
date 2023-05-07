@@ -20,17 +20,18 @@ import android.os.RemoteException
 import com.example.exampleaidllibrary.ISdkApi
 import java.io.File
 import java.io.IOException
-import java.io.RandomAccessFile
 import java.nio.file.Files
 import java.nio.file.Paths
 
 class SdkApi(sdkContext: Context) : ISdkApi.Stub() {
+
     private var mContext: Context? = null
 
     init {
         mContext = sdkContext
     }
 
+    // Implementation of the API.
     @Throws(RemoteException::class)
     override fun createFile(sizeInMb: Int): String? {
         return try {
