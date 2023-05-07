@@ -16,10 +16,14 @@
 plugins {
     id 'com.android.application'
 }
+
 apply plugin: 'kotlin-android'
+
 android {
+    // Declare the correct API levels
     compileSdk = 33
     compileSdkExtension = 5
+
     defaultConfig {
         applicationId "com.example.privacysandbox.client"
         minSdkVersion 33
@@ -53,8 +57,8 @@ android {
 }
 dependencies {
 
-    implementation project(':example-aidl-library')
-    implementation project(':example-sdk')
+    implementation project(':example-aidl-library')     // SDK interface
+    implementation project(':example-sdk')              // SDK
 
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

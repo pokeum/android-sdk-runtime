@@ -15,6 +15,8 @@
  */
 package com.example.exampleaidllibrary;
 
+// ISdkApi.aidl
 interface ISdkApi {
+    // the public functions to share with the App.
     String createFile(int sizeInMb);
 }
